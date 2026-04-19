@@ -31,10 +31,16 @@ body{cursor:none;}
 .cursor{position:fixed;width:12px;height:12px;background:var(--sun);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s;}
 .cursor-ring{position:fixed;width:36px;height:36px;border:1.5px solid var(--leaf);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:all .12s ease;}
 
+/* ── LOGO STYLES ── */
+.nav-logo { height: 42px; width: auto; border-radius: 4px; }
+.hero-logo { height: 100px; width: auto; margin-bottom: 2rem; border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+.footer-logo { height: 60px; width: auto; margin-bottom: 1rem; border-radius: 4px; }
+
 /* ── NAV ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:500;padding:1.2rem 5rem;display:flex;align-items:center;justify-content:space-between;transition:all .4s ease;}
 nav.scrolled{background:rgba(28,26,22,0.96);backdrop-filter:blur(16px);padding:.8rem 5rem;border-bottom:1px solid rgba(168,216,122,0.2);}
-.nav-brand{display:flex;flex-direction:column;text-decoration:none;}
+.nav-brand{display:flex;align-items:center;gap:1rem;text-decoration:none;}
+.nav-brand-text{display:flex;flex-direction:column;}
 .nav-brand-abbr{font-family:'Fraunces',serif;font-size:1.5rem;font-weight:900;color:var(--lime);letter-spacing:.05em;line-height:1;}
 .nav-brand-loc{font-size:.65rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.4);font-weight:400;margin-top:.15rem;}
 .nav-links{display:flex;gap:2.5rem;list-style:none;}
@@ -192,6 +198,7 @@ section{padding:7rem 6rem;}
 
 /* ── FOOTER ── */
 footer{background:var(--ink);padding:3rem 6rem;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem;border-top:2px solid rgba(168,216,122,.15);}
+.f-brand-wrap { display: flex; align-items: center; gap: 1rem; }
 .f-brand{font-family:'Fraunces',serif;font-size:1rem;font-weight:900;color:var(--lime);letter-spacing:.05em;}
 .f-brand span{display:block;font-size:.62rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:.2rem;font-family:'Outfit',sans-serif;font-weight:400;}
 .f-copy{font-size:.72rem;color:rgba(255,255,255,.25);}
@@ -233,11 +240,13 @@ footer{background:var(--ink);padding:3rem 6rem;display:flex;align-items:center;j
 <div class="cursor" id="cur"></div>
 <div class="cursor-ring" id="ring"></div>
 
-<!-- NAV -->
 <nav id="nav">
   <a class="nav-brand" href="#">
-    <span class="nav-brand-abbr">MCRSAHI</span>
-    <span class="nav-brand-loc">Western Province · Zambia</span>
+    <img src="moonga-logo.jpg" alt="MCRSAHI Logo" class="nav-logo">
+    <div class="nav-brand-text">
+      <span class="nav-brand-abbr">MCRSAHI</span>
+      <span class="nav-brand-loc">Western Province · Zambia</span>
+    </div>
   </a>
   <ul class="nav-links">
     <li><a href="#about">About</a></li>
@@ -249,7 +258,6 @@ footer{background:var(--ink);padding:3rem 6rem;display:flex;align-items:center;j
   <a class="nav-btn" href="#contact">Get Involved</a>
 </nav>
 
-<!-- HERO -->
 <div class="hero" id="home">
   <div class="hero-leaves"></div>
   <div class="orb orb-1"></div>
@@ -258,6 +266,7 @@ footer{background:var(--ink);padding:3rem 6rem;display:flex;align-items:center;j
   <div class="hero-deco">GROW</div>
   <div class="hero-content">
     <div class="org-name-block">
+      <img src="moonga-logo.jpg" alt="MCRSAHI Logo" class="hero-logo">
       <div class="org-name-tag">Western Province, Zambia &nbsp;·&nbsp; Est. 2025</div>
       <div class="org-name">
         <span class="org-name-line1">Moonga's</span>
@@ -278,7 +287,6 @@ footer{background:var(--ink);padding:3rem 6rem;display:flex;align-items:center;j
   <div class="scroll-bar"></div>
 </div>
 
-<!-- MARQUEE -->
 <div class="marquee-band">
   <div class="marquee-track">
     <span class="marquee-item">Climate-Resilient Agriculture</span><span class="marquee-dot">✦</span>
@@ -298,7 +306,6 @@ footer{background:var(--ink);padding:3rem 6rem;display:flex;align-items:center;j
   </div>
 </div>
 
-<!-- STATS -->
 <div class="stats">
   <div class="stat"><div class="stat-n">5</div><div class="stat-l">Leadership Members</div></div>
   <div class="stat"><div class="stat-n">4</div><div class="stat-l">Thematic Pillars</div></div>
@@ -306,7 +313,6 @@ footer{background:var(--ink);padding:3rem 6rem;display:flex;align-items:center;j
   <div class="stat"><div class="stat-n">∞</div><div class="stat-l">Community Impact</div></div>
 </div>
 
-<!-- ABOUT -->
 <section class="about" id="about">
   <div class="about-visual">
     <div class="a-card a-card-back">
@@ -337,7 +343,6 @@ footer{background:var(--ink);padding:3rem 6rem;display:flex;align-items:center;j
   </div>
 </section>
 
-<!-- MISSION -->
 <div class="mission">
   <div class="mission-inner">
     <div class="mission-vert">Mission</div>
@@ -345,7 +350,6 @@ footer{background:var(--ink);padding:3rem 6rem;display:flex;align-items:center;j
   </div>
 </div>
 
-<!-- PILLARS -->
 <section class="pillars" id="pillars">
   <div class="pillars-head reveal">
     <p class="tag">What We Do</p>
@@ -359,7 +363,6 @@ footer{background:var(--ink);padding:3rem 6rem;display:flex;align-items:center;j
   </div>
 </section>
 
-<!-- TEAM -->
 <section class="team" id="team">
   <div class="reveal">
     <p class="tag">The People Behind the Work</p>
@@ -375,7 +378,6 @@ footer{background:var(--ink);padding:3rem 6rem;display:flex;align-items:center;j
   </div>
 </section>
 
-<!-- OBJECTIVES -->
 <section class="objectives" id="objectives">
   <div class="reveal">
     <p class="tag">Strategic Direction</p>
@@ -394,7 +396,6 @@ footer{background:var(--ink);padding:3rem 6rem;display:flex;align-items:center;j
   </div>
 </section>
 
-<!-- LOCATION STRIP -->
 <div class="loc-strip">
   <div class="loc-left">
     <div class="loc-ico">📍</div>
@@ -411,7 +412,6 @@ footer{background:var(--ink);padding:3rem 6rem;display:flex;align-items:center;j
   </div>
 </div>
 
-<!-- CONTACT -->
 <section class="contact" id="contact">
   <div class="reveal">
     <p class="tag">Reach Out</p>
@@ -449,9 +449,11 @@ footer{background:var(--ink);padding:3rem 6rem;display:flex;align-items:center;j
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <div class="f-brand">MCRSAHI<span>Moonga's Climate-Resilient Sustainable Agriculture &amp; Health Initiative · Est. 2025</span></div>
+  <div class="f-brand-wrap">
+    <img src="moonga-logo.jpg" alt="MCRSAHI Logo" class="footer-logo">
+    <div class="f-brand">MCRSAHI<span>Moonga's Climate-Resilient Sustainable Agriculture &amp; Health Initiative · Est. 2025</span></div>
+  </div>
   <div class="f-copy">© 2025 MCRSAHI · Non-Governmental · Non-Political · Non-Profit · Western Province, Zambia</div>
   <div class="f-links">
     <a href="#about">About</a>
